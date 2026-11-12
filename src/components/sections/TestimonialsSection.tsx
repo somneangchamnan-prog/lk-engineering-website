@@ -3,13 +3,14 @@ import { partnerSlots, testimonialPlaceholders, testimonials } from "@/data/cont
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
-export function TestimonialsSection() {
+export function TestimonialsSection({ hideWhenEmpty = false }: { hideWhenEmpty?: boolean }) {
   const real = testimonials.length > 0;
+  if (!real && hideWhenEmpty) return null;
   const items = real ? testimonials : testimonialPlaceholders;
   return (
     <section aria-labelledby="testimonials-title" className="section-y bg-steel-50">
       <div className="container-page">
-        <SectionHeading id="testimonials-title" index="08" eyebrow="Testimonials" title="What clients say" />
+        <SectionHeading id="testimonials-title" index="07" eyebrow="Testimonials" title="What clients say" />
         <ul className="mt-12 grid gap-6 md:grid-cols-3">
           {items.map((t, i) => (
             <li key={i}>

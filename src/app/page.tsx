@@ -8,7 +8,6 @@ import { CapabilitiesSection } from "@/components/sections/CapabilitiesSection";
 import { FeaturedProjectsSection } from "@/components/sections/FeaturedProjectsSection";
 import { WhyChooseUsSection } from "@/components/sections/WhyChooseUsSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
-import { StatsSection } from "@/components/sections/StatsSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { CTASection } from "@/components/CTASection";
 import { ContactSection } from "@/components/sections/ContactSection";
@@ -31,8 +30,7 @@ export default function HomePage() {
       <FeaturedProjectsSection />
       <WhyChooseUsSection />
       <ProcessSection />
-      <StatsSection />
-      <TestimonialsSection />
+      <TestimonialsSection hideWhenEmpty />
       <CTASection />
       <ContactSection />
     </>
