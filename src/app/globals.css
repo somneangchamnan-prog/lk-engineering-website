@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+  body {
+    @apply bg-white font-sans text-navy-900 antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply tracking-tight text-balance;
+  }
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-volt;
+  }
+  ::selection {
+    @apply bg-volt text-white;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-page px-5 sm:px-8 lg:px-10;
+  }
+  .section-y {
+    @apply py-20 sm:py-24 lg:py-28;
+  }
+  /* Small monospaced "drawing label" text */
+  .label {
+    @apply font-mono text-[0.7rem] font-medium uppercase tracking-[0.18em];
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm px-5 py-3 text-sm font-semibold transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply btn bg-volt text-white hover:bg-volt-dark;
+  }
+  .btn-outline-light {
+    @apply btn border border-white/30 text-white hover:border-white hover:bg-white/10;
+  }
+  .btn-outline-dark {
+    @apply btn border border-navy-900/25 text-navy-900 hover:border-navy-900 hover:bg-navy-900 hover:text-white;
+  }
+  .field {
+    @apply w-full rounded-sm border border-steel-300 bg-white px-3.5 py-2.5 text-sm text-navy-900 placeholder:text-steel-400 transition-colors focus:border-volt focus:outline-none focus:ring-2 focus:ring-volt/30 aria-[invalid=true]:border-red-600;
+  }
+  /* Technical-drawing corner ticks */
+  .ticks {
+    position: relative;
+  }
+  .ticks::before,
+  .ticks::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    pointer-events: none;
+    border-color: currentColor;
+    opacity: 0.55;
+  }
+  .ticks::before {
+    top: -1px;
+    left: -1px;
+    border-top: 2px solid;
+    border-left: 2px solid;
+  }
+  .ticks::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+}
