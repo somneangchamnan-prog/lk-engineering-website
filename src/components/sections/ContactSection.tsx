@@ -9,7 +9,7 @@ export function ContactSection() {
     <section id="contact" aria-labelledby="contact-title" className="section-y">
       <div className="container-page grid gap-14 lg:grid-cols-2">
         <div>
-          <SectionHeading id="contact-title" index="09" eyebrow="Contact" title="Talk to an engineer" text="Send us a message and we'll respond as soon as we can." />
+          <SectionHeading id="contact-title" index="08" eyebrow="Contact" title="Talk to an engineer" text="Send us a message and we'll respond as soon as we can." />
           <Reveal delay={0.1} className="mt-8">
             <ContactInfo />
           </Reveal>

@@ -21,7 +21,7 @@ export function Logo({ tone = "light" }: { tone?: "light" | "dark" }) {
           {site.name}
         </span>
         <span className={`label mt-1 !text-[0.58rem] ${onDark ? "text-steel-300" : "text-steel-500"}`}>
-          [COMPANY LOGO] · Engineering
+          Electrical &amp; MEP Engineering
         </span>
       </span>
     </Link>

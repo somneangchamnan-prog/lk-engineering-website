@@ -3,6 +3,72 @@
  * edit anything that does not describe your company accurately.
  */
 
+export type ServiceGroupIcon = "zap" | "layers" | "ruler" | "wrench";
+
+/** Home-page service disciplines. `services` are slugs from src/data/services.ts. */
+export const serviceGroups = [
+  {
+    id: "electrical-engineering",
+    code: "E-01",
+    icon: "zap" as ServiceGroupIcon,
+    title: "Electrical Engineering",
+    text: "Low-voltage power systems from the utility intake and main switchboard down to final circuits, sized and protected for safe, reliable operation.",
+    scope: [
+      "LV power distribution (MSB, SMDB, DB)",
+      "Lighting and small-power systems",
+      "Earthing and lightning protection",
+      "Standby generator and ATS integration",
+      "Solar PV and grid-tie systems",
+    ],
+    services: ["electrical-engineering", "control-panel", "solar-pv"],
+  },
+  {
+    id: "mep-engineering",
+    code: "M-02",
+    icon: "layers" as ServiceGroupIcon,
+    title: "MEP Engineering",
+    text: "Mechanical, electrical and plumbing services developed as one coordinated system, so plant rooms, risers and ceiling voids work together.",
+    scope: [
+      "HVAC, ventilation and air distribution",
+      "Cold and hot water, sanitary and drainage",
+      "Fire detection, alarm and sprinkler systems",
+      "ELV: data, telephone, CCTV and access control",
+      "Multi-discipline services coordination",
+    ],
+    services: ["mep-design", "hvac-system", "plumbing-system", "fire-protection", "elv-system", "cctv-security"],
+  },
+  {
+    id: "engineering-design",
+    code: "D-03",
+    icon: "ruler" as ServiceGroupIcon,
+    title: "Engineering Design",
+    text: "Calculations, drawings and models that make a building services project buildable, coordinated and ready for tender or construction.",
+    scope: [
+      "Load assessment and maximum-demand calculation",
+      "Single-line and riser diagrams",
+      "Cable, breaker and voltage-drop sizing",
+      "BIM / Revit MEP modelling and clash review",
+      "Specifications, schedules and BOQ",
+    ],
+    services: ["bim-revit", "mep-design", "electrical-engineering"],
+  },
+  {
+    id: "installation-maintenance",
+    code: "I-04",
+    icon: "wrench" as ServiceGroupIcon,
+    title: "Installation & Maintenance",
+    text: "Site installation to the approved drawings, followed by measured testing, commissioning and support for existing installations.",
+    scope: [
+      "Containment, cabling and termination",
+      "Distribution board and panel installation",
+      "Insulation resistance and earth resistance tests",
+      "Testing, commissioning and handover records",
+      "Troubleshooting and fault finding",
+    ],
+    services: ["electrical-installation", "control-panel", "testing-commissioning"],
+  },
+] as const;
+
 export const processSteps = [
   {
     n: "01",
